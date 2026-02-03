@@ -8,7 +8,9 @@ WORKDIR /app
 COPY frontend/package.json ./
 
 # Install dependencies
-RUN npm install --legacy-peer-deps
+RUN npm install --legacy-peer-deps \
+ && npm install ajv@6.12.6 ajv-keywords@3.5.2
+
 
 
 # Copy frontend source code
