@@ -1,5 +1,5 @@
 # DevOps Fraud Shield Frontend Dockerfile
-FROM node:18-alpine
+FROM node:18-slim
 
 # Set working directory
 WORKDIR /app
@@ -8,7 +8,8 @@ WORKDIR /app
 COPY frontend/package.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps
+
 
 # Copy frontend source code
 COPY frontend/ .
